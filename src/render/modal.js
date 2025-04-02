@@ -34,7 +34,7 @@ export const modalStart = (elementbyId) => {
 
 
         window.addEventListener('click', (event) => {
-                if (event.target === divModal) {
+                if (event.target === document.body) { // Permite cerrar el modal, dando click en cualquier parte del body
                         divModal.style.display = 'none';
                 }
         })

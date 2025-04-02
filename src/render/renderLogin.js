@@ -8,8 +8,8 @@ export const renderLogin = (element) => {
             <img src="${avatar}" alt="Avatar" class="avatar">
         </div>
         <div class="container">
-            <label for="uname"><b>Nombre de usuario</b></label>
-            <input type="text" placeholder="Ingrese su usuario" name="uname" required>
+            <label for="email"><b>Correo Electrónico</b></label>
+            <input type="text" placeholder="Ingrese su correo electrónico" name="email" required>
             <label for="psw"><b>Contraseña</b></label>
             <input type="password" placeholder="Ingresar su contraseña" name="psw" required>
             <button type="submit">Login</button>
