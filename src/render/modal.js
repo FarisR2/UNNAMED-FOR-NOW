@@ -1,44 +1,42 @@
-import { renderModal } from "./renderLogin";
+import { renderLogin } from "./renderLogin";
 import '../styleModal.css';
 import { renderRegister } from "./renderRegister";
 
 export const modalStart = (elementbyId) => {
 
-        const element = document.querySelector(elementbyId);
-        const button = document.createElement('button');
-        const divModal = document.createElement('div');
+  const element = document.querySelector(elementbyId),
+        btnIngresar = document.createElement('button'),
+        btnRegistro = document.createElement('button'),
+        divModal = document.createElement('div');
         
-        button.id = 'openModal';
-        button.innerText = 'Ingresar';
-        divModal.className = 'modal';
-        renderModal(divModal);  
+        btnIngresar.id = 'openModal';
+        btnIngresar.innerText = 'Ingresar';
+        divModal.className = 'modal';  
 
-        button.addEventListener('click', () => {
+        btnRegistro.id = 'RegisterModal';
+        btnRegistro.innerHTML = 'Registrate';
+
+
+        btnIngresar.addEventListener('click', () => {
+                renderLogin(divModal);
                 divModal.style.display = 'flex';
+                document.body.appendChild(divModal);
         })
-        document.body.appendChild(divModal);
-        element.append(button);
-        
-        const closeModal = divModal.querySelector('.close');
-        closeModal.addEventListener('click', () => {
-                divModal.style.display = 'none';
+
+        btnRegistro.addEventListener('click', ()=>{
+                renderRegister(divModal);
+                divModal.style.display = 'flex';
+                document.body.appendChild(divModal);
         })
+       
+        element.append(btnIngresar);
+        element.append(btnRegistro);
+
 
         window.addEventListener('click', (event) => {
                 if (event.target === divModal) {
                         divModal.style.display = 'none';
                 }
-        })
-
-        const registerLink = document.querySelector('#register-link')
-
-        
-        registerLink.addEventListener('click', (event) => {
-                event.preventDefault();
-                divModal.style.display = 'none'
-                button.innerText = 'Registrarse'
-                button.style.backgroundColor = 'red'
-                renderRegister(divModal)
         })
 
 }

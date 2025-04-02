@@ -45,6 +45,9 @@
   background-color: #00BFFF;
   color: #ffff;
 }
+#RegisterModal{
+  background-color: red;
+}
 
 a {
   font-weight: 500;
