@@ -1,6 +1,6 @@
-import { renderLogin } from "./renderLogin";
+import { renderLogin } from "../render/renderLogin";
 import '../styleModal.css';
-import { renderRegister } from "./renderRegister";
+import { renderRegister } from "../render/renderRegister";
 
 export const modalStart = (elementbyId) => {
 
@@ -21,12 +21,14 @@ export const modalStart = (elementbyId) => {
                 renderLogin(divModal);
                 divModal.style.display = 'flex';
                 document.body.appendChild(divModal);
+                window.history.pushState({}, '', '/login')
         })
 
         btnRegistro.addEventListener('click', ()=>{
                 renderRegister(divModal);
                 divModal.style.display = 'flex';
                 document.body.appendChild(divModal);
+                window.history.pushState({}, '', '/register');
         })
        
         element.append(btnIngresar);

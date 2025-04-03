@@ -1,6 +1,6 @@
 import './style.css'
 import unasLogo from './unasLogo.svg'
-import { modalStart } from './render/modal'
+import { modalStart } from './app/modal'
 
 document.querySelector('#app').innerHTML = `
     <a href="https://portalweb.unas.edu.pe/" target="_blank">
